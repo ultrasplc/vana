@@ -106,12 +106,12 @@ services:
       - --syncmode=${GETH_SYNCMODE:-full}
       - --state.scheme=${GETH_STATE_SCHEME:-path}
       - --gcmode=${GETH_GCMODE:-full}
-      - --port=${P2P_PORT:-30303}
+      - --port=${P2P_PORT:-30305}
       - --bootnodes=${GETH_BOOTNODES}
     ports:
       - "${AUTHRPC_PORT:-8551}:${AUTHRPC_PORT:-8551}"
       - "${HTTP_PORT:-8545}:${HTTP_PORT:-8545}"
-      - "${P2P_PORT:-30303}:${P2P_PORT:-30303}"
+      - "${P2P_PORT:-30303}:${P2P_PORT:-303035}"
     volumes:
       - ./data/execution:/root/.ethereum  # Use the default so that the default ipc path works, etc.
       - ./data/jwt.hex:/root/.ethereum/jwt.hex:ro
